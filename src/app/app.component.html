@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<div layout="column">
+  <md-sidenav-layout  style="height: 100vh;">
+    <md-sidenav #left (open)="mybutton.focus()" [opened]="true" mode="side" layout-padding>
+      <app-menu></app-menu>
+    </md-sidenav>
+    <md-content layout-padding>
+      <p>My regular content. This will be moved into the proper DOM at runtime.</p>
+      <button md-raised-button class="md-raised md-primary" (click)="left.toggle()">Toggle Left Sidenav</button>
+    </md-content>
+  </md-sidenav-layout>
+</div>
